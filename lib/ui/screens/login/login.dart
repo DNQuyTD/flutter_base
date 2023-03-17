@@ -19,7 +19,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pd = ProgressDialog();
-    final successDialog = SuccessDialog("Login success", "Now you can navigate to main page");
+    final successDialog =
+        SuccessDialog("Login success", "Now you can navigate to main page");
     final failDialog = FailDialog("Login failed", "Please check again");
 
     return BlocConsumer<LoginCubit, LoginBlocState>(
@@ -45,10 +46,7 @@ class LoginPage extends StatelessWidget {
           body: SingleChildScrollView(
             child: SizedBox(
               width: double.infinity,
-              height: MediaQuery
-                  .of(context)
-                  .size
-                  .height,
+              height: MediaQuery.of(context).size.height,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
@@ -56,36 +54,24 @@ class LoginPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .height * 0.26),
+                          height: MediaQuery.of(context).size.height * 0.26),
                       const Text("Log in",
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 40,
                               fontWeight: FontWeight.bold)),
                       SizedBox(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .height * 0.02),
+                          height: MediaQuery.of(context).size.height * 0.02),
                       ClipRect(
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
                           decoration: BoxDecoration(
                               color:
-                              Color.fromRGBO(0, 0, 0, 1).withOpacity(0.8),
+                                  Color.fromRGBO(0, 0, 0, 1).withOpacity(0.8),
                               borderRadius:
-                              const BorderRadius.all(Radius.circular(30))),
-                          width: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.9,
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .height * 0.4,
+                                  const BorderRadius.all(Radius.circular(30))),
+                          width: MediaQuery.of(context).size.width * 0.9,
+                          height: MediaQuery.of(context).size.height * 0.4,
                           child: Form(
                             key: _formKey,
                             child: Center(
@@ -101,11 +87,8 @@ class LoginPage extends StatelessWidget {
                                       }),
                                   SizedBox(
                                       height:
-                                      MediaQuery
-                                          .of(context)
-                                          .size
-                                          .height *
-                                          0.03),
+                                          MediaQuery.of(context).size.height *
+                                              0.03),
                                   PasswordFormField(
                                       controller: passwordController,
                                       onChanged: (value) {},
@@ -114,16 +97,15 @@ class LoginPage extends StatelessWidget {
                                       }),
                                   SizedBox(
                                       height:
-                                      MediaQuery
-                                          .of(context)
-                                          .size
-                                          .height *
-                                          0.03),
+                                          MediaQuery.of(context).size.height *
+                                              0.03),
                                   ElevatedButton(
                                     onPressed: () {
-                                      FocusManager.instance.primaryFocus?.unfocus();
+                                      FocusManager.instance.primaryFocus
+                                          ?.unfocus();
                                       if (_formKey.currentState!.validate()) {
-                                        cubit.signIn(emailController.text, passwordController.text);
+                                        cubit.signIn(emailController.text,
+                                            passwordController.text);
                                       }
                                     },
                                     child: const Text("Sign in"),
@@ -131,8 +113,7 @@ class LoginPage extends StatelessWidget {
                                   const SizedBox(height: 30),
                                   Text('Forgot Password?',
                                       style: TextStyle(
-                                          color:
-                                          Theme.of(context).primaryColor,
+                                          color: Theme.of(context).primaryColor,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                       textAlign: TextAlign.start),
