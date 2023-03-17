@@ -64,6 +64,9 @@ dependencies:
   get_it: ^7.2.0
   injectable: ^2.1.0
 
+  material_dialogs: ^1.1.4
+  lottie: ^2.3.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -95,6 +98,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/lotties/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

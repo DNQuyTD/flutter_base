@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
       primaryColor: LightModeColors.primaryColor,
+      dialogBackgroundColor: LightModeColors.primaryBackground,
       scaffoldBackgroundColor: LightModeColors.primaryBackground,
       appBarTheme: appBarTheme,
       iconTheme: IconThemeData(color: LightModeColors.primaryText),
@@ -47,6 +48,7 @@ ThemeData lightThemeData(BuildContext context) {
 ThemeData darkThemeData(BuildContext context) {
   return ThemeData.dark().copyWith(
       primaryColor: DarkModeColors.primaryColor,
+      dialogBackgroundColor: DarkModeColors.primaryBackground,
       scaffoldBackgroundColor: DarkModeColors.primaryBackground,
       appBarTheme: appBarTheme,
       iconTheme: IconThemeData(color: DarkModeColors.primaryText),
@@ -109,7 +111,7 @@ class DarkModeColors with GeneralColors {
   static Color secondaryColor = GeneralColors.secondaryColor;
   static Color tertiaryColor = GeneralColors.tertiaryColor;
   static Color alternate = GeneralColors.alternate;
-  static Color primaryBackground = const Color(0xFF1D1D35);
+  static Color primaryBackground = const Color(0xFF1C1243);
   static Color secondaryBackground = const Color(0xFF101213);
   static Color primaryText = const Color(0xFFF5FCF9);
   static Color secondaryText = const Color(0xFF95A1AC);
