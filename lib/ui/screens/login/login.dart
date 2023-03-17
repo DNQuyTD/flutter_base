@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:time_tracker/ui/components/email_form_field.dart';
+import 'package:time_tracker/ui/components/fail_dialog.dart';
 import 'package:time_tracker/ui/components/pass_word_form_field.dart';
 import 'package:time_tracker/ui/components/success_dialog.dart';
 import 'package:time_tracker/ui/screens/login/login_bloc_state.dart';
@@ -19,6 +20,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final pd = ProgressDialog();
     final successDialog = SuccessDialog();
+    final failDialog = FailDialog();
 
     return BlocConsumer<LoginCubit, LoginBlocState>(
       listener: (context, state) {
@@ -33,9 +35,7 @@ class LoginPage extends StatelessWidget {
         }
 
         if (state.loginStatus == LoginStatus.loadFailure) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(state.errorObject?.message ?? ""),
-          ));
+          failDialog.show(context);
         }
       },
       builder: (context, state) {

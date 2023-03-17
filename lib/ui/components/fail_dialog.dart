@@ -5,14 +5,14 @@ import 'package:material_dialogs/shared/types.dart';
 import 'package:material_dialogs/widgets/buttons/icon_button.dart';
 import 'package:time_tracker/configs/lottie_manager.dart';
 
-class SuccessDialog {
+class FailDialog {
   bool _dialogIsOpen = false;
 
   /// [_context] Required to show the alert.
   // Can only be accessed with the constructor.
   late BuildContext? _context;
 
-  SuccessDialog();
+  FailDialog();
 
   /// [close] Closes the progress dialog.
   void close() {
@@ -28,10 +28,10 @@ class SuccessDialog {
       _dialogIsOpen = true;
       Dialogs.materialDialog(
           color: Theme.of(_context!).dialogBackgroundColor,
-          msg: 'Congratulations, you login successfully',
+          msg: 'You login fail',
           title: 'Congratulations',
           lottieBuilder: Lottie.asset(
-            LottieManager.success,
+            LottieManager.fail,
             fit: BoxFit.contain,
           ),
           customView: Container(),
