@@ -14,21 +14,21 @@ class AppRouter {
 
   late final GoRouter _goRouter = GoRouter(
     // refreshListenable: appService,
-    initialLocation: APP_PAGE.login.toPath,
+    initialLocation: AppPage.login.toPath,
     routes: <GoRoute>[
       GoRoute(
-        path: APP_PAGE.home.toPath,
-        name: APP_PAGE.home.toName,
+        path: AppPage.home.toPath,
+        name: AppPage.home.toName,
         builder: (context, state) => const HomePage(),
       ),
       GoRoute(
-        path: APP_PAGE.login.toPath,
-        name: APP_PAGE.login.toName,
+        path: AppPage.login.toPath,
+        name: AppPage.login.toName,
         builder: (context, state) => LoginPage(),
       ),
       GoRoute(
-        path: APP_PAGE.error.toPath,
-        name: APP_PAGE.error.toName,
+        path: AppPage.error.toPath,
+        name: AppPage.error.toName,
         builder: (context, state) => const ErrorPage(),
       ),
     ],

@@ -12,7 +12,10 @@ class FailDialog {
   // Can only be accessed with the constructor.
   late BuildContext? _context;
 
-  FailDialog();
+  FailDialog(this.title, this.message);
+
+  final String title;
+  final String message;
 
   /// [close] Closes the progress dialog.
   void close() {
@@ -28,8 +31,8 @@ class FailDialog {
       _dialogIsOpen = true;
       Dialogs.materialDialog(
           color: Theme.of(_context!).dialogBackgroundColor,
-          msg: 'You login fail',
-          title: 'Congratulations',
+          msg: message,
+          title: title,
           lottieBuilder: Lottie.asset(
             LottieManager.fail,
             fit: BoxFit.contain,

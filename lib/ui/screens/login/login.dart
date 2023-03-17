@@ -19,8 +19,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pd = ProgressDialog();
-    final successDialog = SuccessDialog();
-    final failDialog = FailDialog();
+    final successDialog = SuccessDialog("Login success", "Now you can navigate to main page");
+    final failDialog = FailDialog("Login failed", "Please check again");
 
     return BlocConsumer<LoginCubit, LoginBlocState>(
       listener: (context, state) {

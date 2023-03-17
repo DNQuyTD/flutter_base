@@ -12,7 +12,10 @@ class SuccessDialog {
   // Can only be accessed with the constructor.
   late BuildContext? _context;
 
-  SuccessDialog();
+  SuccessDialog(this.title, this.message);
+
+  final String title;
+  final String message;
 
   /// [close] Closes the progress dialog.
   void close() {
@@ -28,8 +31,8 @@ class SuccessDialog {
       _dialogIsOpen = true;
       Dialogs.materialDialog(
           color: Theme.of(_context!).dialogBackgroundColor,
-          msg: 'Congratulations, you login successfully',
-          title: 'Congratulations',
+          msg: message,
+          title: title,
           lottieBuilder: Lottie.asset(
             LottieManager.success,
             fit: BoxFit.contain,
